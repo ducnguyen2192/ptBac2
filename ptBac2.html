@@ -5,29 +5,32 @@
     <title>ptBac2</title>
 </head>
 <body>
-    <input type="text" id="a"> x2
-    <input type="text" id="b"> x
-    <input type="text" id="c">
+    <input type="text" id="a"> x2 +
+    <input type="text" id="b"> x +
+    <input type="text" id="c"> = 0
     <button onclick="solve()">solve</button>
 
 
 </body>
 </html>
 <script>
+
     function solve(){
         let a = document.getElementById("a").value;
         let b = document.getElementById("b").value;
         let c = document.getElementById("c").value;
         let delta = (b*b)-4*a*c;
-
-        if(delta < 0){
+        if (a==0){
+            document.write("không phải phương trình bậc 2")
+        }
+        else if(delta < 0){
             document.write("vô nghiệm")
         }else if (delta == 0){
-            document.write("nghiệm kép x1 = x2 = " + (-b/(2*a)));
+            document.write("nghiệm kép x = " + (-b/(2*a)));
         }else {
-            document.writeln("x1 = "+(-b+Math.sqrt(delta))/(2*a))
-            document.write("x2 = "+(-b-Math.sqrt(delta))/(2*a))
-        };
+             document.writeln("x1 = " + (-b + Math.sqrt(delta)) / (2 * a))
+             document.write("x2 = " + (-b - Math.sqrt(delta)) / (2 * a))
+         }
     }
 
 </script>
